@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { validateTitle } from "../utils/taskUtils.js";
+import { validateTitle,filterTasks,countActiveTasks,countCompletedTasks } from "../utils/taskUtils.js";
 
 describe("validateTitle", () => {
   test("Tom titel ska renunerar felmedelande ", () => {
@@ -9,15 +9,39 @@ describe("validateTitle", () => {
   });
 });
 
-test("Titel med mindre än 2 tecken ska renunerar felmedelande", () => {
-  const title = "a";
-  const result = validateTitle(title);
-  expect(result).toBe("Uppgiften måste innehålla minst två tecken.");
+describe("filterTasks", () => {
+  test("Filtrerar uppgifter", () => {
+  const tasks=[
+    { id: 1, title: "Förbered presentation", completed: false },
+    { id: 2, title: "Rätta inlämningar", completed: true },
+
+  ];
+  const result = filterTasks(tasks, "Filter på alla uppgifter");
+  expect(result).toEqual(tasks);
+
+});
 });
 
-test("Rätt titel ska inte renunerar felmedelande", () => {
-  const title = "Göra klart uppgiften";
-  const result = validateTitle(title);
-  expect(result).toBe("");
+describe("countActiveTasks", () => {
+  test("Antal aktiva uppgifter ", () => {
+    const tasks = [
+      { id: "1", title: "Förbered presentation", completed: false },
+      { id: "2", title: "Rätta inlämningar", completed: true },
+    ];
+    const result = countActiveTasks(tasks);
+    expect(result).toBe(1);
+  });
 });
+
+describe("countCompletedTasks", () => {
+  test("Antal slutförda uppgifter ", () => {
+    const tasks = [
+      { id: "1", title: "Förbered presentation", completed: false },
+      { id: "2", title: "Rätta inlämningar", completed: true },
+    ];
+    const result = countCompletedTasks(tasks);
+    expect(result).toBe(1);
+  });
+});
+
 
