@@ -1,19 +1,29 @@
-import { getWeatherIcon,getClothingAdvice } from './weatherUtils';
+import { getWeatherIcon, getClothingAdvice } from "./weatherUtils";
 import { describe, expect, test } from "vitest";
 
 describe("getWeatherIcon", () => {
-    test ("visar rätt ikon för soligt väder", () => {
-        const weatherCode = 0;
-        const result = getWeatherIcon(weatherCode);
-        expect(result).toBe("☀️");
-    });
+  test("visar rätt ikon för soligt väder", () => {
+    // Arrange
+    const weatherCode = 0;
+
+    // Act
+    const result = getWeatherIcon(weatherCode);
+
+    // Assert
+    expect(result).toBe("☀️");
+  });
 });
 
 describe("getClothingAdvice", () => {
-    test("ger rätt klädråd för soligt väder", () => {
-        const tempreture = 0;
-        const weatherCode = 0;
-        const result = getClothingAdvice(tempreture, weatherCode);
-        expect(result).toBe("Ta på dig en varm jacka, mössa och handskar.");
-    });
+  test("lägger till paraply vid regnig väderkod", () => {
+    // Arrange
+    const temperature = 10;
+    const weatherCode = 62;
+
+    // Act
+    const result = getClothingAdvice(temperature, weatherCode);
+
+    // Assert
+    expect(result).toContain("paraply");
+  });
 });
