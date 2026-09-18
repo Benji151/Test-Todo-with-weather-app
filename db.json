@@ -9,6 +9,11 @@
       "id": "2",
       "title": "Rätta inlämningar",
       "completed": true
+    },
+    {
+      "title": "gör klart uppgiften",
+      "completed": false,
+      "id": "qcIuhmqd2cw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -11,9 +11,9 @@ describe("getWeatherIcon", () => {
 
 describe("getClothingAdvice", () => {
     test("ger rätt klädråd för soligt väder", () => {
+        const tempreture = 0;
         const weatherCode = 0;
-        const temperature = 3;
-        const result = getClothingAdvice(weatherCode, temperature);
+        const result = getClothingAdvice(tempreture, weatherCode);
         expect(result).toBe("Ta på dig en varm jacka, mössa och handskar.");
     });
 });
