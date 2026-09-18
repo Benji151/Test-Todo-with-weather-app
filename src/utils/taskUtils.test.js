@@ -2,7 +2,7 @@ import { describe, expect, test } from "vitest";
 import { validateTitle,filterTasks,countActiveTasks,countCompletedTasks } from "../utils/taskUtils.js";
 
 describe("validateTitle", () => {
-  test("Tom titel ska renunerar felmedelande ", () => {
+  test("Tom titel ska returnera felmeddelande", () => {
     // Arrange
     const title = "";
 

@@ -53,3 +53,21 @@ VITE_BUTTON_VARIANT=A
 - `B` visar **Skapa uppgift**.
 
 Starta om React-appen efter att du har ändrat `.env`.
+
+-FÖR TESTER
+ För test måste test verktyg finnas
+
+Kör tester
+- npm run test
+- Kör ESLint
+- npm run lint
+
+Bygg projektet
+- npm run build
+
+Testresultat
+Senaste testkörningen:
+Test Files: 3 passed (3)
+Tests: 9 passed (9)
+ESLint: inga fel
+Build: godkänd
